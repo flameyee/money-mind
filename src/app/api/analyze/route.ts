@@ -2,7 +2,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 
-const API_KEY = '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';
+const API_KEY = process.env.OPENROUTER_API_KEY;
 
 export async function POST(req: NextRequest) {
   try {
@@ -41,7 +41,7 @@ Reply in Chinese.`;
         'X-Title': 'MoneyMind',
       },
       body: JSON.stringify({
-        model: 'openrouter/free',
+        model: 'qwen/qwen3-8b:free',
         messages: [
           { role: 'system', content: 'You are a professional AI business advisor.' },
           { role: 'user', content: prompt }
