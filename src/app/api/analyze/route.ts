@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'qwen/qwen3-8b:free',
+        model: 'openrouter/auto',
         messages: [{ role: 'user', content: prompt }],
         max_tokens: 1000,
       }),
